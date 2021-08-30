@@ -1,0 +1,114 @@
+<main>
+  <div id="form_token" data-token="{{ csrf_token() }}"></div>
+  <div class="row">
+    <div class="col s12 center">
+      <h3 class="toggle_class job_list"> Timelapse Jobs</h3>
+      <h3 class="toggle_class add_job hide"> Create Job</h3>
+      <h3 class="toggle_class job_details hide"> Job Details</h3>
+    </div>
+  </div>
+  <div class="toggle_class job_list row">
+    <div class="col s12 m8 l6 offset-m2 offset-l3">
+      <table id="job_table">
+        <thead>
+          <tr>
+            <th>Job Name</th>
+            <th>Status</th>
+            <th>Percent Done</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="job_table_body">
+
+        </tbody>
+        <div id="delete_modal" class="modal">
+          <div class="modal-content">
+            <div id="delete_header"></div>
+            <p>Are you sure to delete this job and all the data?</p>
+            <a id="delete_cancel" href="#!" class="modal-action modal-close waves-effect waves-red btn-flat ">Cancel</a>
+            <a id="delete_yes" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Yes</a>
+          </div>
+        </div>
+      </table>
+    </div>
+  </div>
+  <div class="toggle_class add_job row hide">
+    <div class="col s12 m4 l4 offset-m4 offset-l4">
+      <form id="add_job_form" role="form" class="col s12">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+        <div class="row">
+          <div class="errors" id="job_name_error"></div>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">photo_camera</i>
+            <input id="job_name" name="job_name" type="text">
+            <label for="job_name">Job Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="errors" id="storage_dir_error"></div>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">folder</i>
+            <input id="storage_dir" name="storage_dir" type="text">
+            <label for="storage_dir">Storage Path (/path/for/pictures)</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="errors" id="job_resolution_error"></div>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">hd</i>
+            <input id="job_resolution" name="job_resolution" type="text" value="(3280, 2464)">
+            <label for="job_resolution">Picture Resolution (3280, 2464)</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="errors" id="job_frequency_error"></div>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">timeline</i>
+            <input id="job_frequency" name="job_frequency" type="text">
+            <label for="job_frequency">Picture Frequency (seconds)</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="errors" id="job_camera_rotate_error"></div>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">crop_rotate</i>
+            <input id="camera_rotate" name="camera_rotate" type="text"  value="0">
+            <label for="camera_rotate">Rotate Camera (0, 90, 180, 270 or 360)</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="errors" id="job_length_error"></div>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">timer</i>
+            <input id="job_length" name="job_length" type="text">
+            <label for="job_length">Job Length (minutes)</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 center">
+            <button id="start_job_button" class="btn waves-effect waves-light">Start Job</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="toggle_class job_details row hide">
+    <div class="col s12 m8 l6 offset-m2 offset-l3">
+      <div id="timelapse_button" class="center"></div>
+      <table id="job_details_table"></table>
+      <h3 class="center">Pictures</h3>
+      <div class="center" id="picture_name"></div>
+      <div class="center" id="picture_section">
+        <div class="row">
+          <div class="col s1">
+            <i data-label="" id="label_back" onclick="backImg()" class="label_icons material-icons">navigate_before</i>
+          </div>
+          <div class="col s10" id="picture_section_content"></div>
+          <div class="col s1">
+            <i data-label="" id="label_next" onclick="nextImg()" class="label_icons material-icons">navigate_next</i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

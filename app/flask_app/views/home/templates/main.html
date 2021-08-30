@@ -1,0 +1,36 @@
+{% extends "bootstrap/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		{% block title %}{% endblock %}
+		{% block styles %}
+		{{super()}}
+		<script type=text/javascript>
+		  var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+		</script>
+		 <!-- Compiled and minified CSS -->
+		<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+		{% endblock %}      
+	</head>
+	<body>
+	{% block navbar %}
+		{% include 'navbar.html' %}
+	{% endblock %}
+	{% block content %}
+		{% include 'home.html' %}
+		{% block footer %}
+			{% include 'footer.html' %}
+		{% endblock %}
+	{% endblock %}
+	{% block scripts %}
+		{{super()}}
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+			<script type="text/Javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+	{%- endblock scripts %}
+	</body>
+</html>
