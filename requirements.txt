@@ -1,0 +1,6 @@
+Flask==1.1.1
+flask_bootstrap
+flask_wtf
+opencv-contrib-python
+redis
+picamera==1.13

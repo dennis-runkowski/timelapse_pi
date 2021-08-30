@@ -1,0 +1,176 @@
+/*------------------------------------------------------------
+[Table of Contents]
+1. Body
+2. Nav Bar
+3. Job Details
+4. Jobs
+5. Signup
+6. Footer
+7. Demo
+8. Model Training
+
+------------------------------------------------------------*/
+
+/* Color Variables */
+:root {
+  --main-primary-color: #05386b;
+  --main-primary-color-light: #8ee4af;
+  --main-primary-color-dark: #05386b;
+  --main-secondary-color-light: #edf5e1;
+  --main-button-color: #5cdb95;
+  --main-font-color-light: #ffff;
+  --main-font-color-dark: #263238;
+  --main-hover-color: #3796b3;
+}
+
+/*------------------------------------------------------------
+1. Body
+------------------------------------------------------------*/
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: Quicksand;
+    font-size: 16px;
+    color: var(--main-font-color-dark);
+ }
+ main {
+   flex: 1 0 auto;
+ }
+ .errors {
+   color: red;
+ }
+ .modal {
+   background-color: unset !important;
+   -webkit-box-shadow: unset !important;
+   box-shadow: unset !important;
+
+ }
+ /*------------------------------------------------------------
+ 2. Nav Bar
+ ------------------------------------------------------------*/
+ nav,
+ nav a {
+   color: var(--main-font-color-light);
+   font-weight: 700;
+ }
+ #nav_bar_style {
+   background-color: var(--main-primary-color) ;
+ }
+ a:hover {
+   color: var(--main-hover-color);
+ }
+ #nav_icon {
+   height: 48px;
+ }
+ .nav_logo {
+   font-size: 24px;
+ }
+ #add_button {
+   background-color: var(--main-button-color);
+ }
+ #add_button i {
+   color: var(--main-primary-color) !important;
+ }
+ /*------------------------------------------------------------
+ 3. Job Details
+ ------------------------------------------------------------*/
+ #job_details_table td,
+#job_details_table th {
+  text-align: center;
+}
+.pictures {
+  width: 400px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+}
+#timelapse_button {
+  padding-top: 16px;
+}
+#picture_section {
+  padding-bottom: 64px;
+}
+.label_icons {
+  font-size: 64px;
+  cursor: pointer;
+  padding-top: 107px;
+}
+ /*------------------------------------------------------------
+ 4. Jobs
+ ------------------------------------------------------------*/
+#job_table td,
+#job_table th {
+  text-align: center;
+}
+.delete_class {
+  cursor: pointer;
+}
+.delete_class:hover {
+  color: var(--main-button-color);
+}
+.stop_class {
+  cursor: pointer;
+  color: red;
+}
+.job_info {
+  cursor: pointer;
+}
+.job_info:hover {
+  color: var(--main-button-color);
+}
+#job_table .material-icons {
+  padding-left: 16px;
+}
+ /*------------------------------------------------------------
+ 5. Add New Job
+ ------------------------------------------------------------*/
+/* label color */
+.input-field label {
+  color: #000;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: var(--main-button-color) !important;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid var(--main-button-color) !important;
+  box-shadow: 0 1px 0 0 var(--main-button-color) !important;
+}
+/* valid color */
+.input-field input[type=text].valid {
+  border-bottom: 1px solid var(--main-button-color) !important;
+  box-shadow: 0 1px 0 0 var(--main-button-color) !important;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid var(--main-button-color) !important;
+  box-shadow: 0 1px 0 0 var(--main-button-color) !important;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: var(--main-button-color);
+}
+input.valid[type=text]:not(.browser-default),
+input.valid[type=text]:not(.browser-default):focus {
+  border-bottom: 1px solid var(--main-button-color) !important;
+  box-shadow: 0 1px 0 0 var(--main-button-color) !important;
+}
+input.valid[type=text]:not(.browser-default):focus.valid ~ label {
+  color: var(--main-button-color);
+}
+#forgot_button {
+  background-color: var(--main-button-color);
+  color: var(--main-primary-color);
+}
+/*------------------------------------------------------------
+6. Footer
+------------------------------------------------------------*/
+.page-footer {
+  background-color: var(--main-primary-color);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  }
+}
